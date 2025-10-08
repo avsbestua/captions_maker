@@ -25,7 +25,6 @@ print("Transcribed")
 srt_content = []
 subtitle_number = 1
 
-
 for seg in result["segments"]:
     start_time = format_time(seg["start"])
     end_time = format_time(seg["end"])
@@ -43,4 +42,4 @@ for seg in result["segments"]:
 with open('subs.srt', 'w', encoding='utf-8') as f:
     f.write('\n'.join(srt_content))
 
-print("Файл субтитрів 'subtitles_editable.srt' створено.")
+print("Subtitle file was created")

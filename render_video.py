@@ -15,28 +15,28 @@ def create_clips_from_srt(srt_filepath, video_width):
     final_clips = []
 
     with open(srt_filepath, 'r', encoding='utf-8') as f:
-        # Розділяємо файл на блоки субтитрів
+
         content = f.read().strip().split('\n\n')
 
     for block in content:
         lines = block.split('\n')
-        # Блок має містити номер, таймінг і хоча б один рядок тексту
+
         if len(lines) < 3 or not lines[0].isdigit():
             continue
 
-        # 1. Парсинг часу (другий рядок блоку)
+
         try:
             times = lines[1].split(' --> ')
             start_sec = str_to_sec(times[0])
             end_sec = str_to_sec(times[1])
         except Exception:
-            # Пропускаємо блок з неправильним форматом часу
+
             continue
 
-        # 2. Текст (третій і наступні рядки)
+
         text_content = '\n'.join(lines[2:]).strip()
 
-        # 3. Створення TextClip
+
         txt_clip = TextClip(
             text=text_content,
             font='./fonts/fnt.ttf',
