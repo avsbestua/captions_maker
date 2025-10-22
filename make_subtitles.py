@@ -16,7 +16,7 @@ video = VideoFileClip('video.mp4')
 audio = video.audio
 audio.write_audiofile('audio.mp3')
 
-model = whisper.load_model("medium")
+model = whisper.load_model("small")
 
 #extracting text from audio
 result = model.transcribe('audio.mp3', language='uk')

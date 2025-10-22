@@ -58,4 +58,4 @@ video = VideoFileClip('video.mp4')
 text_clips = create_clips_from_srt('subs.srt', video.w)
 vid = CompositeVideoClip([video, *text_clips])
 
-vid.write_videofile('result.mp4', codec='h264_nvenc', threads=4, bitrate='500k')
+vid.write_videofile('result.mp4', codec='h264', threads=4, bitrate='500k')
