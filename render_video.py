@@ -1,5 +1,6 @@
 from moviepy import TextClip, VideoFileClip, CompositeVideoClip
 
+font = './fonts/font.ttf'
 
 def str_to_sec(time_str):
     time_str = time_str.replace(',', '.')
@@ -39,7 +40,7 @@ def create_clips_from_srt(srt_filepath, video_width):
 
         txt_clip = TextClip(
             text=text_content,
-            font='./fonts/fnt.ttf',
+            font=font,
             font_size=32,
             color='white',
             stroke_color='black',
@@ -58,4 +59,4 @@ video = VideoFileClip('video.mp4')
 text_clips = create_clips_from_srt('subs.srt', video.w)
 vid = CompositeVideoClip([video, *text_clips])
 
-vid.write_videofile('result.mp4', codec='h264', threads=4, bitrate='500k')
+vid.write_videofile('result.mp4', threads=4, bitrate='500k')
