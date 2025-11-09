@@ -2,3 +2,4 @@
 *.mp4
 */__pycache__/
 *.mp3
+last_video_path.txt

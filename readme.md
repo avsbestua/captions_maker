@@ -4,3 +4,7 @@ This app makes captions in offline
 * OpenAI Whisper
 * MoviePy
 * Tkinter
+
+# Platforms ⚠️
+Currently, tested only on Mac (arm). Windows compatibility not guranted
+

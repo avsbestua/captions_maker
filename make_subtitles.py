@@ -24,7 +24,7 @@ def make_subtitles(filename, lang='uk'):
     audio.write_audiofile('audio.mp3')
 
     model = whisper.load_model("small")
-
+    
     #extracting text from audio
     result = model.transcribe('audio.mp3', language=lang)
     print("Transcribed")
