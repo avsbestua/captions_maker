@@ -1,1 +1,4 @@
 *.srt
+*.mp4
+*/__pycache__/
+*.mp3
